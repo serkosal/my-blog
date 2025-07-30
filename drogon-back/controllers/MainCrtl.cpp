@@ -6,13 +6,18 @@ void MainCrtl::get(const HttpRequestPtr& req,
     int p1, std::string p2
 )
 {
-    Json::Value ret;
+    HttpViewData data;
+    // Json::Value ret;
 
-    ret["p1"] = p1;
-    ret["p2"] = p2;
+    data.insert("title", "Dragon views test");
+    data.insert("p1", p1);
+    data.insert("p2", p2);
 
-    //auto resp = HttpResponse::newHttpViewResponse
-    auto resp=HttpResponse::newHttpJsonResponse(ret);
+    // ret["p1"] = p1;
+    // ret["p2"] = p2;
+
+    auto resp = HttpResponse::newHttpViewResponse("test.scp", data);
+    // auto resp=HttpResponse::newHttpJsonResponse(ret);
 
     callback(resp);
 }

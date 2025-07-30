@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<%c++
+    auto para=@@.get<std::unordered_map<std::string,std::string,utils::internal::SafeStringHash>>("parameters");
+%>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[[ title ]]</title>
+</head>
+<body>
+    parameter1 = [[p1]] <br>
+    parameter2 = [[p2]] <br>
+</body>
+</html>
