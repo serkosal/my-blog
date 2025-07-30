@@ -2,17 +2,17 @@
 
 # ssl:The global SSL settings. "key" and "cert" are the path to the SSL key and certificate. While
 #     "conf" is an array of 1 or 2-element tuples that supplies file style options for `SSL_CONF_cmd`.
-ssl:
-  cert: ../../trantor/trantor/tests/server.crt
-  key: ../../trantor/trantor/tests/server.key
-  conf: [
-    # [Options, -SessionTicket],
-    # [Options, Compression]
-  ]
+# ssl:
+#   cert: ../../trantor/trantor/tests/server.crt
+#   key: ../../trantor/trantor/tests/server.key
+#   conf: [
+#     # [Options, -SessionTicket],
+#     # [Options, Compression]
+#   ]
 
 listeners:
   - address: 0.0.0.0
-    port: 80
+    port: 5555
     https: false
   # - address: 0.0.0.0
   #   port: 443
@@ -26,36 +26,36 @@ listeners:
     ssl_conf: [
       # [MinProtocol, TLSv1.3]
     ]
-db_clients:
-  - name: default                             # Name of the client
-    rdbms: sqlite3                            # Server type, postgresql,mysql or sqlite3
-    # filename: ''                            # Sqlite3 db file name
-    host: 127.0.0.1                           # Server address,localhost by default
-    port: 5432                                # port: Server port, 5432 by default
-    dbname: test                              # dbname: Database name
-    user: ''                                  # user: 'postgres' by default
-    passwd: ''                                # passwd: '' by default
+# db_clients:
+#   - name: default                             # Name of the client
+#     rdbms: sqlite3                            # Server type, postgresql,mysql or sqlite3
+#     # filename: ''                            # Sqlite3 db file name
+#     host: 127.0.0.1                           # Server address,localhost by default
+#     port: 5432                                # port: Server port, 5432 by default
+#     dbname: test                              # dbname: Database name
+#     user: ''                                  # user: 'postgres' by default
+#     passwd: ''                                # passwd: '' by default
 
-    # is_fast: false by default, if it is true, the client is faster but user can't call
-    # any synchronous interface of it.
-    is_fast: false
+#     # is_fast: false by default, if it is true, the client is faster but user can't call
+#     # any synchronous interface of it.
+#     is_fast: false
     
-    # client_encoding: The character set used by the client. it is empty string by default which 
-    # means use the default character set.
-    # client_encoding: ''
-    # number_of_connections: 1 by default, if the 'is_fast' is true, the number is the number of  
-    # connections per IO thread, otherwise it is the total number of all connections.  
-    number_of_connections: 1
-    # timeout: -1 by default, in seconds, the timeout for executing a SQL query.
-    # zero or negative value means no timeout.
-    timeout: -1
-    # auto_batch: this feature is only available for the PostgreSQL driver(version >= 14.0), see
-    # the wiki for more details.
-    auto_batch: false
-    # connect_options: extra options for the connection. Only works for PostgreSQL now.
-    # For more information, see https://www.postgresql.org/docs/16/libpq-connect.html#LIBPQ-CONNECT-OPTIONS
-    # connect_options:
-    #   statement_timeout: '1s'
+#     # client_encoding: The character set used by the client. it is empty string by default which 
+#     # means use the default character set.
+#     # client_encoding: ''
+#     # number_of_connections: 1 by default, if the 'is_fast' is true, the number is the number of  
+#     # connections per IO thread, otherwise it is the total number of all connections.  
+#     number_of_connections: 1
+#     # timeout: -1 by default, in seconds, the timeout for executing a SQL query.
+#     # zero or negative value means no timeout.
+#     timeout: -1
+#     # auto_batch: this feature is only available for the PostgreSQL driver(version >= 14.0), see
+#     # the wiki for more details.
+#     auto_batch: false
+#     # connect_options: extra options for the connection. Only works for PostgreSQL now.
+#     # For more information, see https://www.postgresql.org/docs/16/libpq-connect.html#LIBPQ-CONNECT-OPTIONS
+#     # connect_options:
+#     #   statement_timeout: '1s'
 # redis_clients:
 #     # name: Name of the client,'default' by default
 #   - name: default
@@ -88,7 +88,7 @@ app:
   # string value of SameSite attribute of the Set-Cookie HTTP response header
   # valid value is either 'Null' (default), 'Lax', 'Strict' or 'None'
   session_same_site: 'Null'
-  session_cookie_key: The cookie key of the session, "JSESSIONID" by default
+  # session_cookie_key: The cookie key of the session, "JSESSIONID" by default
   session_cookie_key: 'JSESSIONID'
   # session_max_age: The max age of the session cookie, -1 by default
   session_max_age: -1
@@ -199,7 +199,7 @@ app:
     log_size_limit: 100000000
     # max_files: 0 by default,
     # When the number of old log files exceeds "max_files", the oldest file will be deleted. 0 means never delete.
-    max_files: 0
+    max_files: 1
     # # log_level: "DEBUG" by default,options:"TRACE","DEBUG","INFO","WARN"
     # The TRACE level is only valid when built in DEBUG mode.
     log_level: DEBUG
@@ -222,14 +222,14 @@ app:
   # 0 means cache forever, the negative value means no cache
   static_files_cache_time: 5
   # simple_controllers_map: Used to configure mapping from path to simple controller
-  simple_controllers_map:
-    - path: /path/name
-      controller: controllerClassName
-      http_methods:
-        - get
-        - post
-      filters:
-        - FilterClassName
+  # simple_controllers_map:
+  #   - path: ../controllers/
+  #     controller: MainCrtl
+  #     http_methods:
+  #       - get
+  #       - post
+      # filters:
+      #   - FilterClassName
   # idle_connection_timeout: Defaults to 60 seconds, the lifetime 
   # of the connection without read or write
   idle_connection_timeout: 60

@@ -9,9 +9,8 @@ class MainCrtl : public drogon::HttpController<MainCrtl>
   public:
     METHOD_LIST_BEGIN
     // use METHOD_ADD to add your custom processing function here;
-    METHOD_ADD(MainCrtl::get, "/?p1={age}&p2={name}", Get); // path is /MainCrtl/{arg2}/{arg1}
-    // METHOD_ADD(MainCrtl::your_method_name, "/{1}/{2}/list", Get); // path is /MainCrtl/{arg1}/{arg2}/list
-    // ADD_METHOD_TO(MainCrtl::your_method_name, "/absolute/path/{1}/{2}/list", Get); // path is /absolute/path/{arg1}/{arg2}/list
+    METHOD_ADD(MainCrtl::get, "/?p1={age}&p2={name}", Get); 
+   
 
     METHOD_LIST_END
     // your declaration of processing function maybe like this:

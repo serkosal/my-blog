@@ -7,8 +7,7 @@ drogon and it's dependencies
 
 ```bash
 cd backend/build
-cmake ..
-make -j$(nproc)
+cmake .. && make -j$(nproc)
 ```
 
 ## development notice
