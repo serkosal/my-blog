@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+body {
+    /* background-color: #2E4751; */
+    color: aliceblue;
+}
+
+header {
+    background-color: #2E4751;
+}
+
+
+main {
+    padding: 5vh;
+    background-color: #161B1D;
+
+    text-align: center;
+    min-height: 100vh;
+}
+
+footer {
+    text-align: center;
+
+    background-color: #2E4751;
+}

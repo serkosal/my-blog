@@ -10,6 +10,11 @@ cd backend/build
 cmake .. && make -j$(nproc)
 ```
 
+## How to rebuild css styles
+```bash
+tailwind_compile.sh
+```
+
 ## development notice
 In order to supress IDE errors, you might need to run this command
 ```bash

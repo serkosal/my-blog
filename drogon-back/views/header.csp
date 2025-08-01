@@ -1,8 +1,0 @@
-<header>
-    <nav>
-        <a class="bg-sky-700">Link1</a>
-        <a>Link2</a>
-        <a>Link3</a>
-        <a>Link4</a>
-    </nav>
-</header>

@@ -1,0 +1,8 @@
+<header class="w-100%">
+    <nav class="flex flex-row justify-evenly">
+        <a href="/feed">Feed</a>
+        <a href="/news" >News</a>
+        <a href="/about">About</a>
+        <a href="/login">Login</a>
+    </nav>
+</header>
