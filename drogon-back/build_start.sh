@@ -2,6 +2,8 @@
 
 set -e # abort on errors
 
+./tailwind_compile.sh
+
 mkdir -p build
 cd build
 

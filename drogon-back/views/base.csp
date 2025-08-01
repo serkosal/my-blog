@@ -5,7 +5,7 @@
         [[title]]
     </title>
 
-    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="/assets/styles/base-min.css">
 </head>
 <body>
     <%view header.csp %>

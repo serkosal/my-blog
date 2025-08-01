@@ -1,5 +1,13 @@
 build
 .vscode
 drogon-back/uploads/tmp
+
+
+# executables
+tailwindcss
 drogon-back/drogon-back
+
+drogon-back/assets/styles/*-min.css
+
+
 *.log
